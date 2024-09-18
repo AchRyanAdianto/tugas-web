@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    
+}
+
+.header {
+    background-color: #ffff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+}
+
+.head-left img{
+    margin: 10px 50px;
+    width: 60px;
+}
+
+.head-right {
+    /* border: 1px solid red;
+    text-align: center;
+    margin: 20px; */
+    margin: 0 50px;
+    display: flex;
+    align-items: center;
+    color: rgb(19, 58, 110);
+}
+
+.nav {
+    position: sticky;
+    margin-top: -25px;
+    z-index: 5;
+    top: 50px;
+}
+
+.nav ul {
+    border-radius: 25px;
+    background-color: rgb(19, 58, 110);
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0 160px;
+}
+
+.nav li {
+    padding: 15px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.bg-pict {
+    padding: 0;
+    position: relative;
+}
+
+.slider-wrapper {
+    position: relative;
+    margin: 0 auto;
+    top: -25px;
+    z-index: 1;
+}
+
+#slide-1,
+#slide-2,
+#slide-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
+    scrollbar-width: none;
+}
+
+#slide-1 {
+    animation: fade1 10s infinite;
+    -webkit-animation: fade1 10s infinite;
+}
+
+#slide-2 {
+    animation: fade2 10s infinite;
+    -webkit-animation: fade2 10s infinite;
+}
+
+#slide-3 {
+    animation: fade3 10s infinite;
+    -webkit-animation: fade3 10s infinite;
+}
+
+@keyframes fade1 {
+    0% {
+        opacity: 1;
+    }
+    33.3333% {
+        opacity: 0;
+    }
+    66.666% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade2 {
+    0% {
+        opacity: 0;
+    }
+    33.3333% {
+        opacity: 1;
+    }
+    66.666% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade3 {
+    0% {
+        opacity: 1;
+    }
+    33.3333% {
+        opacity: 0;
+    }
+    66.666% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 0.5s;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+svg, #wave-up {
+    position: absolute;
+    bottom: -1px;
+    z-index: 5;
+}
+
+svg, #wave-down {
+    position: absolute;
+    bottom: -1px;
+    z-index: 5;
+}
+
+.vimi {
+    background-color: rgb(213, 230, 252);
+    padding-bottom: 50px;
+    color: rgb(19, 58, 110);
+}
+
+.vimi-content {
+    margin: 0 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.judul-vimi {
+    text-align: center;
+    margin: -4px 0 20px;
+    font-size: 50;
+}
+
+.visi h4 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 10px;
+    }
+
+.misi {
+    font-size: 18px;
+    line-height: 25px;
+    list-style-position: inside;
+    margin: 0 20%;
+}
+
+#wave-contop {
+    margin-top: -30px;
+    top: 0;
+}
+
+.container {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+
+.container .slide .item {
+    width: 165px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide .item:nth-child(3) {
+    left: 70%;
+}
+
+.slide .item:nth-child(4) {
+    left: calc(70% + 200px);
+}
+
+.slide .item:nth-child(n + 5) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+.item .content{
+    position: absolute;
+    top: 20%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: #fff;
+    transform: translate(0, -50%);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: none;
+}
+
+.slide .item:nth-child(2) .content {
+    display: block;
+}
+
+.content .name {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+    
+    
+}
+
+.content .desc {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    background-color: rgba(45, 45, 45, 0.5);
+    opacity: 80%;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 80px;
+}
+
+.button button {
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
+}
+
+.button button:hover {
+    background: #ababab;
+    color: #fff;
+}
+
+.prestasi {
+    background-color: #fff;
+    
+}
+
+.judul-pres {
+    text-align: center;
+    margin: -4px 0 20px;
+    font-size: 50;
+    color: rgb(19, 58, 110);
+    
+}
+
+
+.title {
+    text-align: center;
+}
+.project {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 60px;
+}
+
+.ekskul {
+    padding: 30px 0;
+}
+
+.ekskul-content {
+    background-color: lightblue;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.ekskul-content img {
+    width: 250px;
+    margin: 25px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+
+
+/* .footer {
+    background-color: lightblue;
+    height: 100px;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-content h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    margin: 10px 0;
+} */
+
+footer {
+    /* background: url()center;
+    background-size: auto; */
+    background: #8084c8;
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: #000;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+    margin: 0 10px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #000;
+}
+
+.socials a i {
+    font-size: 1.1rem;
+    transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+    color: red;
+}
+
+.footer-bottom {
+    background: #8299ed;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom span {
+    text-transform: uppercase;
+    font-weight: 200;
+    color: #0069d9;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo img,
+.medsos img {
+    width: 30px;
+}
+
+
+.prestasi {
+    margin: 0 50px;
+}
+.pres-isi img {
+    width: 320px;
+    height: 202px;
+}
+
+.pres-isi {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.date {
+    float: left;
+    margin-right: 15px;
+    width: 80px;
+    text-align: center;
+    padding: 8px 0 5px;
+    color: #fff;
+    display: block;
+    background-color: rgb(40, 82, 137);
+}
+
+.fushion-date {
+    display: block;
+    line-height: 29px;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.fushion-month {
+    font-size: 1em;
+}
+
+.text {
+    margin: 0 20px;
+}
+
+hr {
+    margin: 20px 0;
+    border: 1px solid rgb(40, 82, 137);
+}
